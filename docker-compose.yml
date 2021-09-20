@@ -9,12 +9,23 @@ services:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-  web:
+  backend:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - .:/code
+      - ./backend:/code
     ports:
       - "8000:8000"
     depends_on:
       - db
+  frontend:
+    build: frontend/.
+    command: npm start
+    environment:
+      - HOST=0.0.0.0
+    volumes:
+      - ./frontend:/code
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
