@@ -20,7 +20,7 @@ services:
       - db
   frontend:
     build: frontend/.
-    command: npm start
+    command: sh -c "npm i && npm start"
     environment:
       - HOST=0.0.0.0
     volumes:
