@@ -28,8 +28,7 @@ Once the containers are built, launch the app:
 docker-compose up
 ```
 
-Go to localhost:8000 and you should see a page saying the 
-django app is working.
+Go to localhost:3000 and you should see a page with the current Epoch time of the server.
 
 Want to shut it down? Hit `CTRL+C` in the shell with the containers running.
 
