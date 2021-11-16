@@ -1,28 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
-import { useEffect, useState } from 'react';
+import './style.css';
+import React, { useEffect, useState } from 'react';
+
+class HomePage extends React.Component {
+    render() {
+        return (
+            <div className="page">
+                <div className="sidebar">
+                </div>
+                <div className="header">
+                </div>
+                <div className="content">
+                </div>
+                <div className="footer">
+                </div>
+            </div>
+        );
+    }
+}
 
 function App() {
-  const [time, setTime] = useState(0.0);
-
-  useEffect(() => {
-    fetch('http://localhost:8000/test')
-    .then(res => res.json())
-    .then(data => {
-      setTime(data['time'])
-    })
-  }, [])
-
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Current Epoch Time is {time}
-        </p>
-      </header>
-    </div>
-  );
+    return <HomePage />;
 }
 
 export default App;
